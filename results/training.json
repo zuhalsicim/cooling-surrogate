@@ -1,0 +1,236 @@
+{
+  "1": {
+    "name": "mlp-256x3",
+    "config": {
+      "name": "mlp-256x3",
+      "note": "the intended model: 3 hidden layers of 256, all 4000 training runs, 400 epochs",
+      "hidden": 256,
+      "depth": 3,
+      "epochs": 400,
+      "batch_size": 128,
+      "lr": 0.002,
+      "seed": 0,
+      "train_fraction": 1.0,
+      "loss_weights": {
+        "t_cool": 10.0,
+        "field": 1.0,
+        "heat": 1.0
+      }
+    },
+    "dataset_version": "ds-b17ba686b995",
+    "dataset_content_sha256": "b17ba686b9954847d458db183836f777c2e833c6ee4bd1e98362c36c29a469e0",
+    "n_train": 4000,
+    "n_parameters": 238489,
+    "train_seconds": 69.2,
+    "final": {
+      "train_loss": 1.643178473022999e-05,
+      "val_t_cool_rel_error_mean": 0.0005716780306633416,
+      "val_field_rmse_k_mean": 0.15842114731877682
+    },
+    "history": [
+      [
+        40,
+        {
+          "train_loss": 0.000882910271640867,
+          "val_t_cool_rel_error_mean": 0.0041549670913605735,
+          "val_field_rmse_k_mean": 0.8068845760246254
+        }
+      ],
+      [
+        80,
+        {
+          "train_loss": 0.0009843216640874743,
+          "val_t_cool_rel_error_mean": 0.008387157984129395,
+          "val_field_rmse_k_mean": 0.7678219148275441
+        }
+      ],
+      [
+        120,
+        {
+          "train_loss": 0.0009144416835624725,
+          "val_t_cool_rel_error_mean": 0.003665575968768545,
+          "val_field_rmse_k_mean": 0.4192006559301985
+        }
+      ],
+      [
+        160,
+        {
+          "train_loss": 0.0002432291810400784,
+          "val_t_cool_rel_error_mean": 0.003117215472765557,
+          "val_field_rmse_k_mean": 0.3136567197133828
+        }
+      ],
+      [
+        200,
+        {
+          "train_loss": 0.0003070292444899678,
+          "val_t_cool_rel_error_mean": 0.002428309820570746,
+          "val_field_rmse_k_mean": 0.3132539955773903
+        }
+      ],
+      [
+        240,
+        {
+          "train_loss": 0.00010332638234831393,
+          "val_t_cool_rel_error_mean": 0.0013524276055784086,
+          "val_field_rmse_k_mean": 0.25058722709040326
+        }
+      ],
+      [
+        280,
+        {
+          "train_loss": 9.847916674334556e-05,
+          "val_t_cool_rel_error_mean": 0.00163421354850983,
+          "val_field_rmse_k_mean": 0.2295359121899509
+        }
+      ],
+      [
+        320,
+        {
+          "train_loss": 3.357402130495757e-05,
+          "val_t_cool_rel_error_mean": 0.0007382674524860964,
+          "val_field_rmse_k_mean": 0.1898030780482509
+        }
+      ],
+      [
+        360,
+        {
+          "train_loss": 2.0277534480555913e-05,
+          "val_t_cool_rel_error_mean": 0.0006030231734775822,
+          "val_field_rmse_k_mean": 0.16818723348547743
+        }
+      ],
+      [
+        400,
+        {
+          "train_loss": 1.643178473022999e-05,
+          "val_t_cool_rel_error_mean": 0.0005716780306633416,
+          "val_field_rmse_k_mean": 0.15842114731877682
+        }
+      ]
+    ],
+    "version": "1",
+    "run_id": "3f23a7a181ac42088ce1221f597457fb",
+    "note": "the intended model: 3 hidden layers of 256, all 4000 training runs, 400 epochs"
+  },
+  "2": {
+    "name": "mlp-32x1-quick",
+    "config": {
+      "name": "mlp-32x1-quick",
+      "note": "a quick experiment registered by mistake: 1 hidden layer of 32, 10 % of the training runs, 50 epochs",
+      "hidden": 32,
+      "depth": 1,
+      "epochs": 50,
+      "batch_size": 128,
+      "lr": 0.002,
+      "seed": 0,
+      "train_fraction": 0.1,
+      "loss_weights": {
+        "t_cool": 10.0,
+        "field": 1.0,
+        "heat": 1.0
+      }
+    },
+    "dataset_version": "ds-b17ba686b995",
+    "dataset_content_sha256": "b17ba686b9954847d458db183836f777c2e833c6ee4bd1e98362c36c29a469e0",
+    "n_train": 400,
+    "n_parameters": 13721,
+    "train_seconds": 0.5,
+    "final": {
+      "train_loss": 0.6833682775497436,
+      "val_t_cool_rel_error_mean": 0.1365902164854628,
+      "val_field_rmse_k_mean": 26.19530364503109
+    },
+    "history": [
+      [
+        5,
+        {
+          "train_loss": 8.915376453399658,
+          "val_t_cool_rel_error_mean": 0.4842085814902175,
+          "val_field_rmse_k_mean": 93.99808059070305
+        }
+      ],
+      [
+        10,
+        {
+          "train_loss": 6.569932708740234,
+          "val_t_cool_rel_error_mean": 0.4035992883018738,
+          "val_field_rmse_k_mean": 74.49582030038198
+        }
+      ],
+      [
+        15,
+        {
+          "train_loss": 4.4098572921752925,
+          "val_t_cool_rel_error_mean": 0.328718176948291,
+          "val_field_rmse_k_mean": 58.48831500908657
+        }
+      ],
+      [
+        20,
+        {
+          "train_loss": 2.7471250247955323,
+          "val_t_cool_rel_error_mean": 0.26030359086746396,
+          "val_field_rmse_k_mean": 46.17967602178105
+        }
+      ],
+      [
+        25,
+        {
+          "train_loss": 1.6944591999053955,
+          "val_t_cool_rel_error_mean": 0.20662379119112956,
+          "val_field_rmse_k_mean": 37.4181476224925
+        }
+      ],
+      [
+        30,
+        {
+          "train_loss": 1.132397918701172,
+          "val_t_cool_rel_error_mean": 0.17132553217706714,
+          "val_field_rmse_k_mean": 31.787638264102387
+        }
+      ],
+      [
+        35,
+        {
+          "train_loss": 0.8571886825561523,
+          "val_t_cool_rel_error_mean": 0.15130913369227042,
+          "val_field_rmse_k_mean": 28.517246081369347
+        }
+      ],
+      [
+        40,
+        {
+          "train_loss": 0.7357851052284241,
+          "val_t_cool_rel_error_mean": 0.14097916760750842,
+          "val_field_rmse_k_mean": 26.873702164373864
+        }
+      ],
+      [
+        45,
+        {
+          "train_loss": 0.6910659313201905,
+          "val_t_cool_rel_error_mean": 0.13712784314156595,
+          "val_field_rmse_k_mean": 26.27763637973519
+        }
+      ],
+      [
+        50,
+        {
+          "train_loss": 0.6833682775497436,
+          "val_t_cool_rel_error_mean": 0.1365902164854628,
+          "val_field_rmse_k_mean": 26.19530364503109
+        }
+      ]
+    ],
+    "version": "2",
+    "run_id": "f802442494ef4b27bc1e42d3dd947567",
+    "note": "a quick experiment registered by mistake: 1 hidden layer of 32, 10 % of the training runs, 50 epochs"
+  },
+  "3": {
+    "name": "mlp-256x3-int8",
+    "note": "version 1 with dynamic int8 quantisation of every Linear layer, no retraining",
+    "version": "3",
+    "quantized_from_version": "1"
+  }
+}

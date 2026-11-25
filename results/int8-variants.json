@@ -1,0 +1,56 @@
+{
+  "base_version": "1",
+  "split": "val",
+  "variants": {
+    "float32 (no quantisation)": {
+      "cases": 500,
+      "t_cool_rel_error_mean": 0.0005716780306633416,
+      "t_cool_rel_error_p95": 0.0014407915537508603,
+      "field_rmse_k_mean": 0.15842114731877682,
+      "cases_failing_any_check": 1,
+      "weights_bytes": 957133,
+      "single_case_s_median": 0.00024399999529123306,
+      "batched_s_per_case": 1.25283999950625e-05
+    },
+    "int8, all layers, per-tensor (the registered recipe)": {
+      "cases": 500,
+      "t_cool_rel_error_mean": 0.0046470503756446445,
+      "t_cool_rel_error_p95": 0.011335713635949374,
+      "field_rmse_k_mean": 0.6786859095689026,
+      "cases_failing_any_check": 359,
+      "weights_bytes": 247987,
+      "single_case_s_median": 0.0008977000034064986,
+      "batched_s_per_case": 9.484800015343352e-06
+    },
+    "int8, all layers, per-channel": {
+      "cases": 500,
+      "t_cool_rel_error_mean": 0.00459395021158798,
+      "t_cool_rel_error_p95": 0.0109048324692405,
+      "field_rmse_k_mean": 0.6149218424822199,
+      "cases_failing_any_check": 289,
+      "weights_bytes": 268635,
+      "single_case_s_median": 0.0009376500092912465,
+      "batched_s_per_case": 1.220099997590296e-05
+    },
+    "int8, hidden layers only, per-tensor": {
+      "cases": 500,
+      "t_cool_rel_error_mean": 0.004610636280488452,
+      "t_cool_rel_error_p95": 0.011313916066041188,
+      "field_rmse_k_mean": 0.34810170565844645,
+      "cases_failing_any_check": 32,
+      "weights_bytes": 561465,
+      "single_case_s_median": 0.0007290000066859648,
+      "batched_s_per_case": 1.1338199983583764e-05
+    },
+    "int8, hidden layers only, per-channel": {
+      "cases": 500,
+      "t_cool_rel_error_mean": 0.004500873810261274,
+      "t_cool_rel_error_p95": 0.01131429841798824,
+      "field_rmse_k_mean": 0.33462221332196873,
+      "cases_failing_any_check": 33,
+      "weights_bytes": 575143,
+      "single_case_s_median": 0.0007311500012292527,
+      "batched_s_per_case": 1.0573000006843359e-05
+    }
+  }
+}

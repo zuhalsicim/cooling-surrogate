@@ -1,0 +1,82 @@
+{
+  "cases": 40,
+  "dataset_setting": {
+    "n_cells": 32,
+    "dfo": 0.005,
+    "steps_to_eject": 400
+  },
+  "against_exact_without_latent_heat": [
+    {
+      "n_cells": 8,
+      "dfo": 0.02,
+      "steps_to_eject": 100,
+      "t_cool_rel_error_max": 0.0040073564854204895,
+      "field_error_k_max": 4.535886987827411,
+      "energy_residual_max": 3.3502358935132478e-15
+    },
+    {
+      "n_cells": 16,
+      "dfo": 0.01,
+      "steps_to_eject": 200,
+      "t_cool_rel_error_max": 0.0010234881092043382,
+      "field_error_k_max": 1.0475526404519826,
+      "energy_residual_max": 1.7340518605183709e-15,
+      "order_t_cool": 1.9691565130302442,
+      "order_field": 2.1143619533513025
+    },
+    {
+      "n_cells": 32,
+      "dfo": 0.005,
+      "steps_to_eject": 400,
+      "t_cool_rel_error_max": 0.0002528904496743215,
+      "field_error_k_max": 0.2631666350057458,
+      "energy_residual_max": 2.2157428094025805e-15,
+      "order_t_cool": 2.016909881120445,
+      "order_field": 1.992974245545319
+    },
+    {
+      "n_cells": 64,
+      "dfo": 0.0025,
+      "steps_to_eject": 800,
+      "t_cool_rel_error_max": 6.45463055794581e-05,
+      "field_error_k_max": 0.06700569072484086,
+      "energy_residual_max": 1.2241273673860887e-14,
+      "order_t_cool": 1.9701061272827602,
+      "order_field": 1.973621059295407
+    },
+    {
+      "n_cells": 128,
+      "dfo": 0.00125,
+      "steps_to_eject": 1600,
+      "t_cool_rel_error_max": 1.5491673708879904e-05,
+      "field_error_k_max": 0.016889333493878667,
+      "energy_residual_max": 6.019244600394569e-14,
+      "order_t_cool": 2.0588415024801185,
+      "order_field": 1.9881712314020805
+    }
+  ],
+  "with_latent_heat_against_finer_run": {
+    "reference": {
+      "n_cells": 128,
+      "dfo": 0.00125
+    },
+    "t_cool_rel_diff_max": 0.00026918035207587263,
+    "field_diff_k_max": 0.40286908984015213,
+    "field_diff_k_max_by_fraction": [
+      0.4029,
+      0.1529,
+      0.0827,
+      0.0507,
+      0.0381,
+      0.0317,
+      0.0276,
+      0.0233,
+      0.0199,
+      0.0167,
+      0.0216,
+      0.0219
+    ],
+    "energy_residual_max": 6.816143817367762e-10,
+    "midplane_at_t_cool_minus_eject_k_max": 0.02350963610687984
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "version": "ds-b17ba686b995",
+  "content_sha256": "b17ba686b9954847d458db183836f777c2e833c6ee4bd1e98362c36c29a469e0",
+  "recipe_sha256": "151f97a71272c092906df8edefa3c0de5d3537b9cfcfa91a8af4539f9071f17f",
+  "recipe": {
+    "sampling": {
+      "seed": 7,
+      "n_train": 4000,
+      "n_val": 500,
+      "n_test": 1000,
+      "n_ood_per_shift": 250
+    },
+    "code_sha256": "47f4976ea85c996cacce0a2081531aa5d9b2535572a803975a8eecb0f049897c",
+    "box": {
+      "melt_temp_c": [
+        200.0,
+        260.0
+      ],
+      "mould_temp_c": [
+        20.0,
+        60.0
+      ],
+      "thickness_mm": [
+        1.0,
+        3.0
+      ],
+      "diffusivity_mm2_s": [
+        0.08,
+        0.12
+      ],
+      "htc_w_m2k": [
+        1500.0,
+        4000.0
+      ],
+      "latent_heat_kj_kg": [
+        0.0,
+        80.0
+      ]
+    },
+    "ood_shifts": {
+      "thicker_wall": [
+        "thickness_mm",
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "hotter_melt": [
+        "melt_temp_c",
+        [
+          260.0,
+          300.0
+        ]
+      ],
+      "warmer_mould": [
+        "mould_temp_c",
+        [
+          60.0,
+          80.0
+        ]
+      ],
+      "weaker_contact": [
+        "htc_w_m2k",
+        [
+          600.0,
+          1500.0
+        ]
+      ]
+    }
+  },
+  "solver": {
+    "n_cells": 32,
+    "dfo": 0.005,
+    "steps_to_eject": 400,
+    "fractions": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "t_eject_c": 100.0
+  },
+  "splits": {
+    "train": 4000,
+    "val": 500,
+    "test": 1000,
+    "ood_thicker_wall": 250,
+    "ood_hotter_melt": 250,
+    "ood_warmer_mould": 250,
+    "ood_weaker_contact": 250
+  },
+  "files": {
+    "train/inputs.npy": {
+      "sha256": "b705b863938b1e6c8d0a2758ce3bb0b0cb05e3a28cb53255121614d26798f518",
+      "shape": [
+        4000,
+        6
+      ]
+    },
+    "train/t_cool.npy": {
+      "sha256": "631c127614ab17b14f640a2610eca9c2721ecb5eb194709fa717d0a1a08685d5",
+      "shape": [
+        4000
+      ]
+    },
+    "train/field.npy": {
+      "sha256": "f5f94f4c2766cc9ec7fffe05bc88f317f6e86ed75038adc3f332413dbf929d8b",
+      "shape": [
+        4000,
+        12,
+        33
+      ]
+    },
+    "train/heat.npy": {
+      "sha256": "d742c918701f9c335c6ad8c1506419d38daed1a5e25060cad9465f4f5532a805",
+      "shape": [
+        4000,
+        12
+      ]
+    },
+    "val/inputs.npy": {
+      "sha256": "d2899afcb09574092b34079bc4a4ba7b88dbf7bdac4e212131f7e720ebbed424",
+      "shape": [
+        500,
+        6
+      ]
+    },
+    "val/t_cool.npy": {
+      "sha256": "c85b65bba7acb114df8ecd1862b4e37081ae48f46bc88ae91834ebd25b1010e7",
+      "shape": [
+        500
+      ]
+    },
+    "val/field.npy": {
+      "sha256": "1bd7c9c77ca1a04f458856bc3623a1d4fe761bea37f313fe8cb4aa142d19d69c",
+      "shape": [
+        500,
+        12,
+        33
+      ]
+    },
+    "val/heat.npy": {
+      "sha256": "47bdef6a0e289fbea762781712c28cd8061d6d761f8a2ef65ea80fa8bea47be7",
+      "shape": [
+        500,
+        12
+      ]
+    },
+    "test/inputs.npy": {
+      "sha256": "15ea223bb3f4c094837fb1edd66d621c7c796e14d8bbc7afc224b7b2424fa645",
+      "shape": [
+        1000,
+        6
+      ]
+    },
+    "test/t_cool.npy": {
+      "sha256": "78954221b3284fb3c72340234d2fa5c97ab80d3d8fac5be070948ea0aca835af",
+      "shape": [
+        1000
+      ]
+    },
+    "test/field.npy": {
+      "sha256": "9c431198b1246c85c4e48ae191e1c708f29bdb1f256dfec58719e7d6c1b29000",
+      "shape": [
+        1000,
+        12,
+        33
+      ]
+    },
+    "test/heat.npy": {
+      "sha256": "9dffd3ac728738d61f0b31f32786ea4860a76f7d7f206091fd97e2de2c8990db",
+      "shape": [
+        1000,
+        12
+      ]
+    },
+    "ood_thicker_wall/inputs.npy": {
+      "sha256": "a7b596da05729feaab7d0e2a77c87564c1d71ce601fdfa7bb2fe4385e98d53b8",
+      "shape": [
+        250,
+        6
+      ]
+    },
+    "ood_thicker_wall/t_cool.npy": {
+      "sha256": "a05d5e590be3f91409e5534d623bdb13715239e6c9299b8d2271f163918e6886",
+      "shape": [
+        250
+      ]
+    },
+    "ood_thicker_wall/field.npy": {
+      "sha256": "f25bd7c11ec67dde557bd73f41b590a91c659b5afdb4f9cdf8fa5529097d0b12",
+      "shape": [
+        250,
+        12,
+        33
+      ]
+    },
+    "ood_thicker_wall/heat.npy": {
+      "sha256": "9ba6a15c96da4b9e436df3c59b9b648c44b03c75509f284210d9821ec4bf8189",
+      "shape": [
+        250,
+        12
+      ]
+    },
+    "ood_hotter_melt/inputs.npy": {
+      "sha256": "06282b021a1d4d99ef1e8cf667f81e3a2444e0412941f9d1003ac9e92b62bc66",
+      "shape": [
+        250,
+        6
+      ]
+    },
+    "ood_hotter_melt/t_cool.npy": {
+      "sha256": "3d745c5262235a2aa2237c21feb6818e1696e2e08920e4da35871553fd5ff237",
+      "shape": [
+        250
+      ]
+    },
+    "ood_hotter_melt/field.npy": {
+      "sha256": "f22114c9609585412453c718433353fa95d57bd7541a67ec68a7716bf880a8c0",
+      "shape": [
+        250,
+        12,
+        33
+      ]
+    },
+    "ood_hotter_melt/heat.npy": {
+      "sha256": "dc7172ad692ad22cbf2ac4fc95be51f250adf922ba506d22029c94d7e3daecf7",
+      "shape": [
+        250,
+        12
+      ]
+    },
+    "ood_warmer_mould/inputs.npy": {
+      "sha256": "15321b94dd936281921cdb5b1128105b3619b7d0f4095594eca4d0201973b5a8",
+      "shape": [
+        250,
+        6
+      ]
+    },
+    "ood_warmer_mould/t_cool.npy": {
+      "sha256": "e76cc23cc1df0d7e733c73a73613e94517460302bab3c5375af5f701b44dd80f",
+      "shape": [
+        250
+      ]
+    },
+    "ood_warmer_mould/field.npy": {
+      "sha256": "315d834859558e8d131e4ca1bd0a6532f8a69c967eb276c623465304db7ed6c2",
+      "shape": [
+        250,
+        12,
+        33
+      ]
+    },
+    "ood_warmer_mould/heat.npy": {
+      "sha256": "e0ca01ecbc6905eb879d9f75c0f9fa008abb7671b17687d3407cbfe140486411",
+      "shape": [
+        250,
+        12
+      ]
+    },
+    "ood_weaker_contact/inputs.npy": {
+      "sha256": "769f9e25456dc23fc659732b73f74a2cbb60a58f52130d4d948112909951eedc",
+      "shape": [
+        250,
+        6
+      ]
+    },
+    "ood_weaker_contact/t_cool.npy": {
+      "sha256": "d9375529e2af32a596944aa7c81a3852e03b507b9450e3b131dd3ea2c4b677b3",
+      "shape": [
+        250
+      ]
+    },
+    "ood_weaker_contact/field.npy": {
+      "sha256": "99bc3801a3b41e7312ac92142fa7d89b71a581d9db9f58c79cedc3e5e6878d8f",
+      "shape": [
+        250,
+        12,
+        33
+      ]
+    },
+    "ood_weaker_contact/heat.npy": {
+      "sha256": "b862322daf2f1990b252d61743ba8d9c52a37c68f26ecd4245484ec9ddc683ca",
+      "shape": [
+        250,
+        12
+      ]
+    }
+  },
+  "solver_seconds": {
+    "train": 70.39,
+    "val": 4.78,
+    "test": 9.47,
+    "ood_thicker_wall": 2.68,
+    "ood_hotter_melt": 2.79,
+    "ood_warmer_mould": 2.68,
+    "ood_weaker_contact": 2.76
+  }
+}

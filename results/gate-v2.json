@@ -1,0 +1,84 @@
+{
+  "dataset_version": "ds-b17ba686b995",
+  "test_cases": 1000,
+  "policy": {
+    "max_t_cool_rel_error_p95": 0.02,
+    "max_field_rmse_k_mean": 1.5,
+    "max_violation_rate": 0.01
+  },
+  "criteria": [
+    {
+      "name": "t_cool_rel_error_p95",
+      "estimate": 0.3970388564510669,
+      "upper95": 0.41198024858097587,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "name": "field_rmse_k_mean",
+      "estimate": 26.131894691082554,
+      "upper95": 26.578830370149205,
+      "threshold": 1.5,
+      "passed": false
+    },
+    {
+      "name": "physics:within_bounds",
+      "estimate": 0.386,
+      "upper95": 0.41655513793984755,
+      "failures": 386,
+      "threshold": 0.01,
+      "passed": false
+    },
+    {
+      "name": "physics:cools_monotonically",
+      "estimate": 1.0,
+      "upper95": 1.0,
+      "failures": 1000,
+      "threshold": 0.01,
+      "passed": false
+    },
+    {
+      "name": "physics:coolest_at_face",
+      "estimate": 1.0,
+      "upper95": 1.0,
+      "failures": 1000,
+      "threshold": 0.01,
+      "passed": false
+    },
+    {
+      "name": "physics:energy_balance",
+      "estimate": 1.0,
+      "upper95": 1.0,
+      "failures": 1000,
+      "threshold": 0.01,
+      "passed": false
+    },
+    {
+      "name": "physics:ejects_at_cooling_time",
+      "estimate": 0.913,
+      "upper95": 0.928925578547625,
+      "failures": 913,
+      "threshold": 0.01,
+      "passed": false
+    },
+    {
+      "name": "lineage:trained_on_gate_dataset",
+      "estimate": "ds-b17ba686b995",
+      "threshold": "ds-b17ba686b995",
+      "passed": true
+    }
+  ],
+  "decision": "block",
+  "failed": [
+    "t_cool_rel_error_p95",
+    "field_rmse_k_mean",
+    "physics:within_bounds",
+    "physics:cools_monotonically",
+    "physics:coolest_at_face",
+    "physics:energy_balance",
+    "physics:ejects_at_cooling_time"
+  ],
+  "model_version": "2",
+  "name": "mlp-32x1-quick",
+  "production_after": "1"
+}

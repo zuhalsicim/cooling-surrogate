@@ -1,0 +1,33 @@
+{
+  "threads": 1,
+  "batch_cases": 1000,
+  "solver": {
+    "single_case_s_median": 0.3424172000013641,
+    "single_case_s_max": 0.4009759999898961,
+    "single_case_runs": 20,
+    "batched_s_per_case": 0.00939142400000128
+  },
+  "models": {
+    "v1 mlp-256x3": {
+      "single_case_s_median": 0.0002705000006244518,
+      "batched_s_per_case": 1.155280000239145e-05,
+      "speedup_single_vs_solver": 1265.8676495781544,
+      "speedup_batched_vs_solver": 812.9132329874349,
+      "weights_bytes": 957133
+    },
+    "v2 mlp-32x1-quick": {
+      "single_case_s_median": 0.00018075000843964517,
+      "batched_s_per_case": 3.358400004799478e-06,
+      "speedup_single_vs_solver": 1894.4242545676104,
+      "speedup_batched_vs_solver": 2796.398280901628,
+      "weights_bytes": 57181
+    },
+    "v3 mlp-256x3-int8": {
+      "single_case_s_median": 0.0009291000023949891,
+      "batched_s_per_case": 8.882199996151031e-06,
+      "speedup_single_vs_solver": 368.5471952628324,
+      "speedup_batched_vs_solver": 1057.3308419165198,
+      "weights_bytes": 247987
+    }
+  }
+}

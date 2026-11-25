@@ -1,0 +1,58 @@
+{
+  "requests": 400,
+  "served_by": {
+    "surrogate": 300,
+    "solver": 100
+  },
+  "fallback_reasons": {
+    "out_of_box": 100
+  },
+  "out_of_box_rate": {
+    "value": 0.25,
+    "low": 0.2100790142364741,
+    "high": 0.2946771329306741,
+    "n": 400
+  },
+  "out_of_box_by_feature": {
+    "melt_temp_c": 30,
+    "thickness_mm": 27,
+    "mould_temp_c": 25,
+    "htc_w_m2k": 18
+  },
+  "median_latency_ms": {
+    "surrogate": 1.0375,
+    "solver": 335.12850000000003
+  },
+  "shadow_on_answered": {
+    "sampled": 100,
+    "t_cool_rel_error_mean": {
+      "value": 0.0005253126666794848,
+      "low": 0.0004506450190944506,
+      "high": 0.0006067629093499859
+    },
+    "t_cool_rel_error_p95": {
+      "value": 0.0013811005416103713,
+      "low": 0.0010649127086853386,
+      "high": 0.0017102271140153039
+    }
+  },
+  "surrogate_error_avoided_by_fallback": {
+    "out_of_box": {
+      "n": 100,
+      "t_cool_rel_error_mean": {
+        "value": 0.02306618413069449,
+        "low": 0.015561890009719543,
+        "high": 0.030985557697415057
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.1224342299148293,
+        "low": 0.0715806992633014,
+        "high": 0.14914432426711224
+      }
+    }
+  },
+  "alerts": [
+    "out-of-box traffic 25.0 % (95 % CI from 21.0 %) is above 5 %; most often outside: melt_temp_c (30), thickness_mm (27), mould_temp_c (25)"
+  ],
+  "model_version": "1"
+}

@@ -1,0 +1,551 @@
+{
+  "1": {
+    "name": "mlp-256x3",
+    "test": {
+      "n": 1000,
+      "t_cool_rel_error_mean": {
+        "value": 0.0005518828091907373,
+        "low": 0.0005244673401502057,
+        "high": 0.0005790785628908669
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.0013821702241770717,
+        "low": 0.0012994743271978453,
+        "high": 0.0015304378240906986
+      },
+      "field_rmse_k_mean": {
+        "value": 0.16358306686511376,
+        "low": 0.15958973469699114,
+        "high": 0.16816014243144198
+      },
+      "field_max_error_k_p95": {
+        "value": 1.0282229623698085,
+        "low": 0.9852527631109185,
+        "high": 1.073224381705286
+      },
+      "heat_error_frac_mean": {
+        "value": 0.0009364607221772865,
+        "low": 0.0009100031392233402,
+        "high": 0.0009663402751845601
+      },
+      "physics_violations": {
+        "within_bounds": 0,
+        "cools_monotonically": 0,
+        "coolest_at_face": 1,
+        "energy_balance": 0,
+        "ejects_at_cooling_time": 0
+      },
+      "cases_failing_any_check": 1
+    },
+    "ood_thicker_wall": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.05175595396442859,
+        "low": 0.04557030980314642,
+        "high": 0.05804618226355531
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.16174748460692887,
+        "low": 0.13812985751246604,
+        "high": 0.17169012779487716
+      },
+      "field_rmse_k_mean": {
+        "value": 1.5657302121319798,
+        "low": 1.442620716001132,
+        "high": 1.6962636056827152
+      },
+      "field_max_error_k_p95": {
+        "value": 13.341693503605336,
+        "low": 11.794020096469263,
+        "high": 14.468283661814013
+      },
+      "heat_error_frac_mean": {
+        "value": 0.018100846321110666,
+        "low": 0.016433499546384456,
+        "high": 0.019803061603927728
+      },
+      "physics_violations": {
+        "within_bounds": 171,
+        "cools_monotonically": 108,
+        "coolest_at_face": 203,
+        "energy_balance": 88,
+        "ejects_at_cooling_time": 76
+      },
+      "cases_failing_any_check": 204
+    },
+    "ood_hotter_melt": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.0018934596688682027,
+        "low": 0.001705966906061964,
+        "high": 0.0020900106426058034
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.004900707433990585,
+        "low": 0.004636547821124302,
+        "high": 0.005672334816354359
+      },
+      "field_rmse_k_mean": {
+        "value": 0.6069971513915609,
+        "low": 0.5656667416500826,
+        "high": 0.6503934486764635
+      },
+      "field_max_error_k_p95": {
+        "value": 3.959755810989792,
+        "low": 3.592615567032027,
+        "high": 4.592061125698892
+      },
+      "heat_error_frac_mean": {
+        "value": 0.0031463928228263587,
+        "low": 0.002938553679621679,
+        "high": 0.0033697335755452588
+      },
+      "physics_violations": {
+        "within_bounds": 52,
+        "cools_monotonically": 2,
+        "coolest_at_face": 75,
+        "energy_balance": 0,
+        "ejects_at_cooling_time": 4
+      },
+      "cases_failing_any_check": 88
+    },
+    "ood_warmer_mould": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.012656928119990703,
+        "low": 0.011282401311572944,
+        "high": 0.014003602099781976
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.033756269728506635,
+        "low": 0.03168584635779231,
+        "high": 0.03753398564791833
+      },
+      "field_rmse_k_mean": {
+        "value": 0.5203849317042998,
+        "low": 0.48571167937048987,
+        "high": 0.559637934975378
+      },
+      "field_max_error_k_p95": {
+        "value": 3.4326652497050194,
+        "low": 3.1186626242780644,
+        "high": 3.7420267637340316
+      },
+      "heat_error_frac_mean": {
+        "value": 0.006209263717372664,
+        "low": 0.005662787667896954,
+        "high": 0.006767505298442491
+      },
+      "physics_violations": {
+        "within_bounds": 0,
+        "cools_monotonically": 0,
+        "coolest_at_face": 19,
+        "energy_balance": 7,
+        "ejects_at_cooling_time": 0
+      },
+      "cases_failing_any_check": 24
+    },
+    "ood_weaker_contact": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.03557934573701922,
+        "low": 0.031255221964701256,
+        "high": 0.03987081456789314
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.10694707595493128,
+        "low": 0.09218573605398583,
+        "high": 0.11456042975648864
+      },
+      "field_rmse_k_mean": {
+        "value": 1.723589387231195,
+        "low": 1.5523485291724928,
+        "high": 1.8957187392359278
+      },
+      "field_max_error_k_p95": {
+        "value": 14.76317633270521,
+        "low": 14.16981923871147,
+        "high": 15.790361274535542
+      },
+      "heat_error_frac_mean": {
+        "value": 0.008163659548865925,
+        "low": 0.007389271952423783,
+        "high": 0.008926733178250847
+      },
+      "physics_violations": {
+        "within_bounds": 2,
+        "cools_monotonically": 0,
+        "coolest_at_face": 59,
+        "energy_balance": 0,
+        "ejects_at_cooling_time": 1
+      },
+      "cases_failing_any_check": 59
+    }
+  },
+  "2": {
+    "name": "mlp-32x1-quick",
+    "test": {
+      "n": 1000,
+      "t_cool_rel_error_mean": {
+        "value": 0.13853338956541544,
+        "low": 0.1320126581882638,
+        "high": 0.14535890044558686
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.3970388564510669,
+        "low": 0.36324290135634096,
+        "high": 0.41198024858097587
+      },
+      "field_rmse_k_mean": {
+        "value": 26.131894691082554,
+        "low": 25.67226375915451,
+        "high": 26.578830370149205
+      },
+      "field_max_error_k_p95": {
+        "value": 149.81349351678026,
+        "low": 144.62486033864508,
+        "high": 153.41266734334286
+      },
+      "heat_error_frac_mean": {
+        "value": 0.17361202962580433,
+        "low": 0.1698068455512731,
+        "high": 0.17733319440554748
+      },
+      "physics_violations": {
+        "within_bounds": 386,
+        "cools_monotonically": 1000,
+        "coolest_at_face": 1000,
+        "energy_balance": 1000,
+        "ejects_at_cooling_time": 913
+      },
+      "cases_failing_any_check": 1000
+    },
+    "ood_thicker_wall": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.1523945802443842,
+        "low": 0.13647639332600783,
+        "high": 0.1688148049407784
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.41963817654841756,
+        "low": 0.3715172713624522,
+        "high": 0.4963923742445323
+      },
+      "field_rmse_k_mean": {
+        "value": 31.659159492937547,
+        "low": 30.704612661945063,
+        "high": 32.65440082639875
+      },
+      "field_max_error_k_p95": {
+        "value": 157.51417782428106,
+        "low": 152.7986982524851,
+        "high": 162.66508816212433
+      },
+      "heat_error_frac_mean": {
+        "value": 0.30532884888079714,
+        "low": 0.28735425069408055,
+        "high": 0.32216083158204273
+      },
+      "physics_violations": {
+        "within_bounds": 248,
+        "cools_monotonically": 250,
+        "coolest_at_face": 250,
+        "energy_balance": 250,
+        "ejects_at_cooling_time": 232
+      },
+      "cases_failing_any_check": 250
+    },
+    "ood_hotter_melt": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.20303620978525933,
+        "low": 0.1886075256870514,
+        "high": 0.21791255155824935
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.4165208082631637,
+        "low": 0.3548816714293538,
+        "high": 0.5080833159188665
+      },
+      "field_rmse_k_mean": {
+        "value": 35.794417178048896,
+        "low": 35.03289281341901,
+        "high": 36.61321440344711
+      },
+      "field_max_error_k_p95": {
+        "value": 197.49042145135755,
+        "low": 190.2829654090516,
+        "high": 206.7155339372906
+      },
+      "heat_error_frac_mean": {
+        "value": 0.25636565219242574,
+        "low": 0.24775622985533155,
+        "high": 0.2645954774323092
+      },
+      "physics_violations": {
+        "within_bounds": 227,
+        "cools_monotonically": 250,
+        "coolest_at_face": 250,
+        "energy_balance": 250,
+        "ejects_at_cooling_time": 242
+      },
+      "cases_failing_any_check": 250
+    },
+    "ood_warmer_mould": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.1478362352104782,
+        "low": 0.13428861210553125,
+        "high": 0.16207285669358534
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.38421272048654453,
+        "low": 0.31878944860863506,
+        "high": 0.44476367155580926
+      },
+      "field_rmse_k_mean": {
+        "value": 19.30654548483805,
+        "low": 18.906471286555778,
+        "high": 19.73814140222614
+      },
+      "field_max_error_k_p95": {
+        "value": 119.2349934805439,
+        "low": 115.95605638175614,
+        "high": 121.85167469428184
+      },
+      "heat_error_frac_mean": {
+        "value": 0.2363316502354884,
+        "low": 0.22637593639230136,
+        "high": 0.24631811202844595
+      },
+      "physics_violations": {
+        "within_bounds": 236,
+        "cools_monotonically": 250,
+        "coolest_at_face": 250,
+        "energy_balance": 250,
+        "ejects_at_cooling_time": 242
+      },
+      "cases_failing_any_check": 250
+    },
+    "ood_weaker_contact": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.15079427179572003,
+        "low": 0.13951178151107912,
+        "high": 0.1619747434612207
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.3010960475222325,
+        "low": 0.2748571983155921,
+        "high": 0.32261449916400975
+      },
+      "field_rmse_k_mean": {
+        "value": 33.43307759445834,
+        "low": 32.468445280844165,
+        "high": 34.44502575170091
+      },
+      "field_max_error_k_p95": {
+        "value": 161.27330383748304,
+        "low": 155.5895553989141,
+        "high": 164.29316620284536
+      },
+      "heat_error_frac_mean": {
+        "value": 0.23067797396982034,
+        "low": 0.22392189987671327,
+        "high": 0.23734661984702699
+      },
+      "physics_violations": {
+        "within_bounds": 104,
+        "cools_monotonically": 250,
+        "coolest_at_face": 250,
+        "energy_balance": 250,
+        "ejects_at_cooling_time": 232
+      },
+      "cases_failing_any_check": 250
+    }
+  },
+  "3": {
+    "name": "mlp-256x3-int8",
+    "test": {
+      "n": 1000,
+      "t_cool_rel_error_mean": {
+        "value": 0.004682889603022062,
+        "low": 0.004462633261218248,
+        "high": 0.004914864873321831
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.012082853673144456,
+        "low": 0.011234110034084265,
+        "high": 0.013008705885303578
+      },
+      "field_rmse_k_mean": {
+        "value": 0.7120794894873498,
+        "low": 0.6987763230597562,
+        "high": 0.7264660719736283
+      },
+      "field_max_error_k_p95": {
+        "value": 3.1740675613473357,
+        "low": 3.0741217105449947,
+        "high": 3.2618837896009034
+      },
+      "heat_error_frac_mean": {
+        "value": 0.00676933330660661,
+        "low": 0.00660998123125124,
+        "high": 0.006930908865196802
+      },
+      "physics_violations": {
+        "within_bounds": 272,
+        "cools_monotonically": 37,
+        "coolest_at_face": 677,
+        "energy_balance": 6,
+        "ejects_at_cooling_time": 10
+      },
+      "cases_failing_any_check": 749
+    },
+    "ood_thicker_wall": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.05278287253801725,
+        "low": 0.04645953752238003,
+        "high": 0.05926777539861254
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.16005738489403534,
+        "low": 0.1369277899134156,
+        "high": 0.17416961977177672
+      },
+      "field_rmse_k_mean": {
+        "value": 2.142494965389806,
+        "low": 2.0324048602450056,
+        "high": 2.2576386086611695
+      },
+      "field_max_error_k_p95": {
+        "value": 15.700431618945712,
+        "low": 13.809009439572709,
+        "high": 16.743921290056477
+      },
+      "heat_error_frac_mean": {
+        "value": 0.02961218723403806,
+        "low": 0.027583769344597997,
+        "high": 0.03169170954414218
+      },
+      "physics_violations": {
+        "within_bounds": 212,
+        "cools_monotonically": 223,
+        "coolest_at_face": 250,
+        "energy_balance": 156,
+        "ejects_at_cooling_time": 137
+      },
+      "cases_failing_any_check": 250
+    },
+    "ood_hotter_melt": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.0074186852036374346,
+        "low": 0.0067413405913985935,
+        "high": 0.008071606811370943
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.018141281853265554,
+        "low": 0.015398249344218462,
+        "high": 0.02073429895616071
+      },
+      "field_rmse_k_mean": {
+        "value": 1.069152841805885,
+        "low": 1.0275531585286213,
+        "high": 1.1134888001580925
+      },
+      "field_max_error_k_p95": {
+        "value": 5.083136296444566,
+        "low": 4.702049349108847,
+        "high": 5.487729767026661
+      },
+      "heat_error_frac_mean": {
+        "value": 0.008585374191723045,
+        "low": 0.008184851776234528,
+        "high": 0.009012933099095254
+      },
+      "physics_violations": {
+        "within_bounds": 91,
+        "cools_monotonically": 18,
+        "coolest_at_face": 234,
+        "energy_balance": 2,
+        "ejects_at_cooling_time": 16
+      },
+      "cases_failing_any_check": 236
+    },
+    "ood_warmer_mould": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.013664166487963524,
+        "low": 0.012200208083780917,
+        "high": 0.015069059126069187
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.035759130553925975,
+        "low": 0.03244221036134639,
+        "high": 0.03933630328236158
+      },
+      "field_rmse_k_mean": {
+        "value": 0.8732391092800343,
+        "low": 0.8348787386758438,
+        "high": 0.9157296380494623
+      },
+      "field_max_error_k_p95": {
+        "value": 4.355753949063072,
+        "low": 3.9302577555903118,
+        "high": 4.84254216950643
+      },
+      "heat_error_frac_mean": {
+        "value": 0.010439964850907004,
+        "low": 0.009933485543788116,
+        "high": 0.011002179851272604
+      },
+      "physics_violations": {
+        "within_bounds": 31,
+        "cools_monotonically": 15,
+        "coolest_at_face": 199,
+        "energy_balance": 25,
+        "ejects_at_cooling_time": 5
+      },
+      "cases_failing_any_check": 201
+    },
+    "ood_weaker_contact": {
+      "n": 250,
+      "t_cool_rel_error_mean": {
+        "value": 0.036893313788150965,
+        "low": 0.032631078174752214,
+        "high": 0.04114082171774112
+      },
+      "t_cool_rel_error_p95": {
+        "value": 0.10756290543850612,
+        "low": 0.09310890820721099,
+        "high": 0.12102345548797383
+      },
+      "field_rmse_k_mean": {
+        "value": 1.9087839111741896,
+        "low": 1.7610887116569753,
+        "high": 2.0694076123140235
+      },
+      "field_max_error_k_p95": {
+        "value": 14.867091193651072,
+        "low": 14.1655476401453,
+        "high": 15.65891583191312
+      },
+      "heat_error_frac_mean": {
+        "value": 0.011643918886317401,
+        "low": 0.010883884143253433,
+        "high": 0.012392405531435996
+      },
+      "physics_violations": {
+        "within_bounds": 78,
+        "cools_monotonically": 1,
+        "coolest_at_face": 192,
+        "energy_balance": 2,
+        "ejects_at_cooling_time": 10
+      },
+      "cases_failing_any_check": 202
+    }
+  }
+}
