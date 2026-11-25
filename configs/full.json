@@ -1,0 +1,37 @@
+{
+  "dataset": {"seed": 7, "n_train": 4000, "n_val": 500, "n_test": 1000, "n_ood_per_shift": 250},
+  "verify": {"n_cases": 40, "seed": 11},
+  "train_threads": 8,
+  "candidates": [
+    {
+      "name": "mlp-256x3",
+      "note": "the intended model: 3 hidden layers of 256, all 4000 training runs, 400 epochs",
+      "hidden": 256,
+      "depth": 3,
+      "epochs": 400,
+      "batch_size": 128,
+      "lr": 0.002,
+      "seed": 0,
+      "train_fraction": 1.0,
+      "loss_weights": {"t_cool": 10.0, "field": 1.0, "heat": 1.0}
+    },
+    {
+      "name": "mlp-32x1-quick",
+      "note": "a quick experiment registered by mistake: 1 hidden layer of 32, 10 % of the training runs, 50 epochs",
+      "hidden": 32,
+      "depth": 1,
+      "epochs": 50,
+      "batch_size": 128,
+      "lr": 0.002,
+      "seed": 0,
+      "train_fraction": 0.1,
+      "loss_weights": {"t_cool": 10.0, "field": 1.0, "heat": 1.0}
+    }
+  ],
+  "quantize": "mlp-256x3",
+  "gate": {"max_t_cool_rel_error_p95": 0.02, "max_field_rmse_k_mean": 1.5, "max_violation_rate": 0.01},
+  "evaluation": {"bootstrap": 2000, "seed": 0},
+  "speed": {"solver_cases": 20, "repeats": 300},
+  "traffic": {"n_in_box": 300, "n_out_of_box": 100, "shadow_sample": 100, "seed": 3},
+  "monitor": {"max_out_of_box_rate": 0.05, "max_shadow_t_cool_rel_error_p95": 0.02}
+}
