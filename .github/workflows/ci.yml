@@ -1,0 +1,72 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - run: pip install -r requirements-dev.txt
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+      - name: Test
+        run: pytest -q
+      - name: README tables match the committed result files
+        run: python scripts/make_tables.py --check
+
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - run: pip install -r requirements.txt
+      - name: Whole pipeline on a tiny dataset (solver, data, training, registry, gate, export, traffic)
+        run: python -m cooling_surrogate.pipeline --config configs/smoke.json --results smoke-results
+      - name: Build the serving image from the exported production version
+        run: docker build -t cooling-surrogate .
+      - name: Start it; one request inside the training box, one outside
+        run: |
+          docker run -d --name svc -p 8000:8000 cooling-surrogate
+          for attempt in $(seq 1 60); do
+            curl -fsS http://127.0.0.1:8000/healthz && break
+            sleep 1
+          done
+          inside='{"melt_temp_c":230,"mould_temp_c":40,"thickness_mm":2.0,"diffusivity_mm2_s":0.1,"htc_w_m2k":2500,"latent_heat_kj_kg":40}'
+          outside='{"melt_temp_c":230,"mould_temp_c":40,"thickness_mm":4.5,"diffusivity_mm2_s":0.1,"htc_w_m2k":2500,"latent_heat_kj_kg":40}'
+          url=http://127.0.0.1:8000/v1/cooling-time
+          curl -fsS -X POST "$url" -H "content-type: application/json" -d "$inside" > inside.json
+          curl -fsS -X POST "$url" -H "content-type: application/json" -d "$outside" > outside.json
+          python - <<'PY'
+          import json
+          inside, outside = json.load(open("inside.json")), json.load(open("outside.json"))
+          assert inside["cooling_time_s"] > 0, inside
+          assert outside["source"] == "solver" and outside["out_of_box"] == ["thickness_mm"], outside
+          print("inside:", inside["source"], round(inside["cooling_time_s"], 3), "s")
+          print("outside:", outside["source"], round(outside["cooling_time_s"], 3), "s")
+          PY
+      - name: Container log
+        if: always()
+        run: docker logs svc || true
