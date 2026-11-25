@@ -107,7 +107,7 @@ def export_bundle(registry: Registry, version: str, gate_report: dict, dest: Pat
 
 def _replay_traffic(bundle: Path, dataset_dir: Path, manifest: dict, cfg: dict, log_path: Path) -> None:
     with warnings.catch_warnings():
-        warnings.simplefilter("ignore", DeprecationWarning)  # starlette's note on its test client
+        warnings.filterwarnings("ignore", message="Using `httpx` with `starlette.testclient`")
         from fastapi.testclient import TestClient
 
     from .service import create_app
