@@ -1,0 +1,5 @@
+# The whole pipeline: data, training, registry, gate, evaluation.
+-r requirements-serve.txt
+mlflow-skinny==3.18.0
+sqlalchemy==2.1.9
+alembic==1.20.1
